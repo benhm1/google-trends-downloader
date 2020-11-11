@@ -80,8 +80,10 @@ def do_it():
             try:
                 driver.get(url)
                 time.sleep(2)
+                before_list = os.listdir(dirname)
                 driver.find_element_by_class_name('export').click()
-                time.sleep(1)
+                while len(os.listdir(dirname)) == len(before_list):
+                    time.sleep(0.1)
                 break
             except:
                 attempts += 1
