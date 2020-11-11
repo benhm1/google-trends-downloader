@@ -28,7 +28,7 @@ def normalize_all(files_list):
 
     for i in range(1, len(files_list)):
         new = open(files_list[i]).readlines()
-        new_lines = [ x.replace('<1', '0') for x in new if x.startswith('20') ]
+        new_lines = [ x.replace('<1', '0.5') for x in new if x.startswith('20') ]
         new_maps = { x.split(',')[0] : float(x.split(',')[1].strip()) for x in new_lines }
 
         normalized = normalize(normalized, new_maps)
