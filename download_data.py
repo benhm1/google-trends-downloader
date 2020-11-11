@@ -73,8 +73,8 @@ def do_it():
         print(f'\tGetting {cur_start} --> {cur_end}')
         print(f'\t\t{url}')
 
+        attempts = 0
         while 1:
-            attempts = 0
             if attempts > 0:
                 print(f'Attempt {attempts + 1} / 4')
             try:
